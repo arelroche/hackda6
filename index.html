@@ -75,6 +75,10 @@ $(function() {
             localStorage.latitude = geoObj.coords.latitude;
             localStorage.longitude = geoObj.coords.longitude;
 
+            L.marker([localStorage.latitude, localStorage.longitude]).addTo(map)
+              .bindPopup('Current Location')
+              .openPopup();
+
           }
         });
     });
