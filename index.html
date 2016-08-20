@@ -75,6 +75,8 @@ $(function() {
             localStorage.latitude = geoObj.coords.latitude;
             localStorage.longitude = geoObj.coords.longitude;
 
+            marker1.setLatLng([localStorage.latitude, localStorage.longitude]);
+
           }
         });
     });
@@ -119,11 +121,11 @@ $(document).ready(function (){
     $('#search-long').val(e.latlng.lng);
 
     //Update latlng
-    latitude = e.latlng.lat;
-    longitude = e.latlng.lng;
+    var newLatitude = e.latlng.lat;
+    var newLongitude = e.latlng.lng;
 
     //Moving marker location  
-    marker1.setLatLng([latitude, longitude]);
+    marker1.setLatLng([newLatitude, newLongitude]);
 
 
   }
