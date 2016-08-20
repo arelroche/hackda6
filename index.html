@@ -60,7 +60,7 @@
 <script>
 $(function() {
     $('#getLocation').click(function() {
-        // console.log("$('form').serialize(): ",$('form').serialize());
+        console.log("$('form').serialize(): ",$('form').serialize());
         navigator.geolocation.getCurrentPosition(function (geoObj) {
           if (L) {            
             var latLong = {
@@ -102,7 +102,8 @@ $(document).ready(function (){
     accessToken: 'pk.eyJ1Ijoia2FtaWthejFrIiwiYSI6ImNpcWgyNzd2czA0bXRmeW5wdDJrdDA0b2YifQ.EhJNxc3CbcdkQMR8QdbFAA'
   }).addTo(mymap);
 
-  L.marker([localStorage.latitude, localStorage.longitude]).addTo(map)
+  // Add marker to map at current location
+  L.marker([latitude, longitude]).addTo(mymap)
               .bindPopup('Current Location')
               .openPopup();
 
