@@ -109,14 +109,16 @@ $(document).ready(function (){
 
   mymap.on('click', onMapClick);
 
+  //Moving marker location  
+  marker.update();
+
   function onMapClick(e) {
     console.log("You clicked the map at " + e.latlng, e);
     mymap.panTo(e.latlng);
     $('#search-lat').val(e.latlng.lat);
     $('#search-long').val(e.latlng.lng);
 
-    //Moving marker location  
-    marker.update();
+
   }
 
 
