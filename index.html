@@ -105,7 +105,7 @@ $(document).ready(function (){
   }).addTo(mymap);
 
   // Add marker to map at current location
-  var marker1 = L.marker([latitude, longitude]);
+  window.marker1 = L.marker([latitude, longitude]);
               marker1.addTo(mymap)
               .bindPopup('Current Location')
               .openPopup();
