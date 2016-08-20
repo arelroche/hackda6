@@ -103,20 +103,27 @@ $(document).ready(function (){
   }).addTo(mymap);
 
   // Add marker to map at current location
-  L.marker([latitude, longitude]).addTo(mymap)
+  var marker1 = L.marker([latitude, longitude]);
+              marker1.addTo(mymap)
               .bindPopup('Current Location')
               .openPopup();
 
   mymap.on('click', onMapClick);
 
-  //Moving marker location  
-  marker.update();
+  
 
   function onMapClick(e) {
     console.log("You clicked the map at " + e.latlng, e);
     mymap.panTo(e.latlng);
     $('#search-lat').val(e.latlng.lat);
     $('#search-long').val(e.latlng.lng);
+
+    //Update latlng
+    latitude = e.latlng.lat;
+    longitude = e.latlng.lng;
+
+    //Moving marker location  
+    marker1.setLatLng([latitude, longitude]);
 
 
   }
