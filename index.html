@@ -75,10 +75,6 @@ $(function() {
             localStorage.latitude = geoObj.coords.latitude;
             localStorage.longitude = geoObj.coords.longitude;
 
-            L.marker([localStorage.latitude, localStorage.longitude]).addTo(map)
-              .bindPopup('Current Location')
-              .openPopup();
-
           }
         });
     });
@@ -105,6 +101,10 @@ $(document).ready(function (){
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1Ijoia2FtaWthejFrIiwiYSI6ImNpcWgyNzd2czA0bXRmeW5wdDJrdDA0b2YifQ.EhJNxc3CbcdkQMR8QdbFAA'
   }).addTo(mymap);
+
+  L.marker([localStorage.latitude, localStorage.longitude]).addTo(map)
+              .bindPopup('Current Location')
+              .openPopup();
 
   mymap.on('click', onMapClick);
 
