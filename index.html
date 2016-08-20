@@ -60,7 +60,7 @@
 <script>
 $(function() {
     $('#getLocation').click(function() {
-        console.log("$('form').serialize(): ",$('form').serialize());
+        //console.log("$('form').serialize(): ",$('form').serialize());
         navigator.geolocation.getCurrentPosition(function (geoObj) {
           if (L) {            
             var latLong = {
@@ -114,6 +114,9 @@ $(document).ready(function (){
     mymap.panTo(e.latlng);
     $('#search-lat').val(e.latlng.lat);
     $('#search-long').val(e.latlng.lng);
+
+    //Moving marker location  
+    marker.update();
   }
 
 
