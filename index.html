@@ -190,6 +190,11 @@ function initAutocomplete() {
       // When the user selects an address from the dropdown, populate the address
       // fields in the form.
       //autocomplete.addListener('place_changed', fillInAddress);
+
+      //place contains all the information of the selected location
+      var place = autocomplete.getPlace();
+      console.log(place);
+
     }
 
 // Bias the autocomplete object to the user's geographical location,
