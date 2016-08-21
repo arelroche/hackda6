@@ -157,7 +157,7 @@ function initAutocomplete() {
       // location types.
       autocomplete = new google.maps.places.Autocomplete(
           /** @type {!HTMLInputElement} */(document.getElementById('search-location')),
-          {types: ['geocode']});
+          {types: []});
 
       // When the user selects an address from the dropdown, populate the address
       // fields in the form.
@@ -181,7 +181,7 @@ function geolocate() {
         });
       }
     }
-    
+
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm7WomiYWSp91pKjHzgw-Z3MA4elcqM7w&libraries=places&callback=initAutocomplete"
